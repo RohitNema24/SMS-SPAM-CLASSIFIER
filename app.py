@@ -1,24 +1,17 @@
 import streamlit as st
 import pickle
 import string
-import nltk
-nltk.download('all')
 from nltk.corpus import stopwords
-
+import nltk
 from nltk.stem.porter import PorterStemmer
-
 ps = PorterStemmer()
-
-
 def transform_text(text):
     text = text.lower()
     text = nltk.word_tokenize(text)
-
     y = []
     for i in text:
         if i.isalnum():
             y.append(i)
-
     text = y[:]
     y.clear()
 
